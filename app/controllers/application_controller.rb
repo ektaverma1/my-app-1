@@ -1,3 +1,4 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery
+ # added by ekta
+ protect_from_forgery
 end
