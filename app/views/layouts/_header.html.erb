@@ -1,0 +1,23 @@
+<div id="header">
+  <div id="logo">
+    <div id="logo_text">
+      <!-- class="logo_colour", allows you to change the colour of the text -->
+      <h1><a href="index.html">My<span class="logo_colour">Application</span></a></h1>
+      <h2>Simple. Contemporary.</h2>
+    </div>
+  </div>
+  <div id="menubar">
+    <ul id="menu">
+      <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+      <% if user_signed_in? -%>
+      <li class="selected"><%= link_to 'Employee',employees_path %></li>
+      <li><%= link_to 'Projects',projects_path %></li>
+      <li><a href="content.html">Content</a></li>
+      <li><a href="about.html">About us</a></li>
+      <li><%= link_to 'Contact',contacts_path %></li>
+      <%= current_user.email %> |
+      <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
+    <%end%>
+    </ul>
+  </div>
+</div>
